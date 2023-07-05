@@ -424,7 +424,7 @@ function UpdatePage(page, subpage) {
 };
 
 window.addEventListener('load', () => {
-  // if(window.location.host.split(".")[1] != "skywarsnetwork") {window.location.replace("https://www.skywarsnetwork.com")};
+  if((window.location.host.split(".")[1] != 'skywarsnetwork') && (window.location.hostname != 'localhost')) {window.location.replace("https://www.skywarsnetwork.com")};
   if(window.location.pathname.split("/").length > 2) {
     let a = '';
     for(let x in window.location.pathname.split("/")){
