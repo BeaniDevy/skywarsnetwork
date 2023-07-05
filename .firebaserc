@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "skywars-news"
+  },
+  "targets": {
+    "skywars-news": {
+      "hosting": {
+        "main": [
+          "skywars-network"
+        ],
+        "forums": [
+          "skywars-forum"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

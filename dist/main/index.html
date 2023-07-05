@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- section:meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/src/icon.ico">
+  <link rel="stylesheet" href="/src/v1/main.css">
+  <link rel="stylesheet" href="/src/v1/themed.css">
+  <script src="/src/v1/theme.js?v=1"></script>
+  <title>SkyWars Network</title>
+  <!-- endsection -->
+  <!-- section:firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyClXxswQxf1sVDECEaF_cZMGxnFQZT00uI",
+      authDomain: "skywars-news.firebaseapp.com",
+      projectId: "skywars-news",
+      storageBucket: "skywars-news.appspot.com",
+      messagingSenderId: "713444769466",
+      appId: "1:713444769466:web:a7c662b359f71d63b24c83",
+      measurementId: "G-1G43M4JHXN"
+    };
+    const app = firebase.initializeApp(firebaseConfig);
+    firebase.analytics(app);
+  </script>
+  <script type="module" src="/src/v1/app.js?v=4"></script>
+  <!-- endsection -->
+</head>
+
+<body class>
+  <div class="pre-loader">
+    <h1>Loading Content</h1>
+    <p>This should only take a second</p>
+
+    <div class="loadingCircle"></div>
+  </div>
+
+  <header>
+    <div class="title">SkyWars Network</div><div class="line"></div>
+    <nav></nav>
+  </header>
+
+  <div class="alert"></div>
+  <div class="cont-loader" style="display: flex;"><ul class="loadingLines"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
+
+  <main style="display: none;"></main>
+
+  <footer>
+    <!-- <copyright>
+      Working on it
+    </copyright> -->
+
+    <div class="socials">
+      <a href="https://discord.gg/Q5nf6KDvHP" title="Discord Server" target="_blank">Discord</a>
+      <a href="https://www.roblox.com/groups/15581368" title="Roblox Group" target="_blank">Roblox</a>
+      <a href="https://www.youtube.com/channel/UCx1Ga8bp9J-xhGLX2Ht6naw" title="YouTube Channel" target="_blank">YouTube</a>
+    </div>
+  </footer>
+</body>
+</html>

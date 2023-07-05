@@ -1,0 +1,24 @@
+{
+  "hosting": [
+    {
+      "target": "main",
+      "public": "dist/main",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "forums",
+      "public": "dist/forums",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

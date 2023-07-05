@@ -1,0 +1,63 @@
+
+/* == DARK THEME == */
+body.dark {
+  background: var(--darkgrey);
+  color: var(--white);
+}
+
+body.dark header .line {
+  background: var(--grey);
+}
+
+body.dark header nav a:hover {
+  border-color: var(--offwhite)
+}
+
+body.dark .tile-list .tile {
+  background: #28282875;
+}
+
+body.dark .tile-list .tile a {
+  color: var(--white);
+}
+
+body.dark .login input {
+  color: var(--white);
+  border-color: var(--black);
+}
+
+body.dark footer .socials a {
+  color: var(--offwhite);
+}
+
+
+/* == LIGHT THEME == */
+body.light {
+  background: var(--white);
+  color: var(--black);
+}
+
+body.light header .line {
+  background: var(--grey);
+}
+
+body.light header nav a:hover {
+  border-color: var(--darkgrey)
+}
+
+body.light .tile-list .tile {
+  background: var(--offwhite);
+}
+
+body.light .tile-list .tile a {
+  color: var(--black);
+}
+
+body.light .login input {
+  color: var(--black);
+  border-color: var(--offwhite);
+}
+
+body.light footer .socials a {
+  color: var(--darkgrey);
+}
