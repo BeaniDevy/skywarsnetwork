@@ -10,6 +10,32 @@
   <script src="/src/v1/theme.js?v=1"></script>
   <title>SkyWars Network</title>
   <!-- endsection -->
+  <!-- section:embed -->
+  <meta data-rh="true" property="og:site_name" content="SWN:F"/>
+  <meta data-rh="true" property="og:title" content="SkyWars Network - Forums"/>
+  <meta data-rh="true" property="og:type" content="website"/>
+  <meta data-rh="true" property="og:url" content="https://forums.skywarsnetwork.com"/>
+  <meta data-rh="true" property="og:description" content="Fast and reliable news for the Roblox game SkyWars by Voxels Studio">
+  <meta property="og:image" content="https://www.skywarsnetwork.com/src/icon.png"/>
+  <meta property="twitter:image" content="https://www.skywarsnetwork.com/src/icon.png"/>
+  <!-- endsection -->
+  <!-- section:firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyClXxswQxf1sVDECEaF_cZMGxnFQZT00uI",
+      authDomain: "skywars-news.firebaseapp.com",
+      projectId: "skywars-news",
+      storageBucket: "skywars-news.appspot.com",
+      messagingSenderId: "713444769466",
+      appId: "1:713444769466:web:590907b0a23712b2b24c83",
+      measurementId: "G-FJKN008G26"
+    };
+    const app = firebase.initializeApp(firebaseConfig);
+    firebase.analytics(app);
+  </script>
+  <!-- endsection -->
 </head>
 
 <body class>
