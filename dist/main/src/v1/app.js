@@ -194,100 +194,77 @@ pages['/staff'] = function() {
 
 
   let order = [];
-  let count
+  let count = 0;
 
   db.collection("staff").doc("management").get()
   .then((doc) => {
-    if(!doc.exists){
-      UpdatePage('/404');
-      return;
-    };
+    if(!doc.exists) {UpdatePage("/404");return;};
 
     order = doc.data()['order'];
     count = count + order.length;
-    
-    for(let x in order){
-      const mng = main.querySelector(".management");
-      mng.innerHTML = `
-      ${mng.innerHTML}
+
+    for(let x in order) {
+      main.querySelector(".management").innerHTML = `
+      ${main.querySelector(".management").innerHTML}
       <div class="tile">
-        <img src='${doc.data()[order[x]]['avatar']}' alt="${order[x]}'s avatar" title="${order[x]}'s avatar" />
+        <!-- img src='${doc.data()[order[x]]['avatar']}' alt="${order[x]}'s avatar" title="${order[x]}'s avatar" /-->
         <div class="t">
           <h1>${order[x]}</h1>
           <p>${doc.data()[order[x]]['about']}</p>
         </div>
-      </div>
-      `;
-    }
-  })
-  .catch((error) => {
-    alert.textContent = `Error when getting data: ${error}`;
-    alert.classList.add("red");alert.classList.add("active");return;
-  })
-
-
-  db.collection("staff").doc("development").get()
-  .then((doc) => {
-    if(!doc.exists){
-      UpdatePage('/404');
-      return;
+      </div>`;
     };
-
-    order = doc.data()['order'];
-    count = count + order.length;
     
-    for(let x in order){
-      const mng = main.querySelector(".development");
-      mng.innerHTML = `
-      ${mng.innerHTML}
-      <div class="tile">
-        <img src='${doc.data()[order[x]]['avatar']}' alt="${order[x]}'s avatar" title="${order[x]}'s avatar" />
-        <div class="t">
-          <h1>${order[x]}</h1>
-          <p>${doc.data()[order[x]]['about']}</p>
-        </div>
-      </div>
-      `;
-    }
-  })
-  .catch((error) => {
-    alert.textContent = `Error when getting data: ${error}`;
-    alert.classList.add("red");alert.classList.add("active");return;
-  })
+    db.collection("staff").doc("development").get()
+    .then((doc) => {
+      if(!doc.exists) {UpdatePage("/404");return;};
+      
+      order = doc.data()['order'];
+      count = count + order.length;
 
+      for(let x in order) {
+        main.querySelector(".development").innerHTML = `
+        ${main.querySelector(".development").innerHTML}
+        <div class="tile">
+          <!-- img src='${doc.data()[order[x]]['avatar']}' alt="${order[x]}'s avatar" title="${order[x]}'s avatar" /-->
+          <div class="t">
+            <h1>${order[x]}</h1>
+            <p>${doc.data()[order[x]]['about']}</p>
+          </div>
+        </div>`;
+      };
 
-  db.collection("staff").doc("moderation").get()
-  .then((doc) => {
-    if(!doc.exists){
-      UpdatePage('/404');
-      return;
-    };
+      db.collection("staff").doc("moderation").get()
+      .then((doc) => {
+        if(!doc.exists) {UpdatePage("/404");return;};
+        
+        order = doc.data()['order'];
+        count = count + order.length;
+  
+        for(let x in order) {
+          main.querySelector(".moderation").innerHTML = `
+          ${main.querySelector(".moderation").innerHTML}
+          <div class="tile">
+            <!-- img src='${doc.data()[order[x]]['avatar']}' alt="${order[x]}'s avatar" title="${order[x]}'s avatar" /-->
+            <div class="t">
+              <h1>${order[x]}</h1>
+              <p>${doc.data()[order[x]]['about']}</p>
+            </div>
+          </div>`;
+        };
 
-    order = doc.data()['order'];
-    count = count + order.length;
-    
-    for(let x in order){
-      const mng = main.querySelector(".moderation");
-      mng.innerHTML = `
-      ${mng.innerHTML}
-      <div class="tile">
-        <img src='${doc.data()[order[x]]['avatar']}' alt="${order[x]}'s avatar" title="${order[x]}'s avatar" />
-        <div class="t">
-          <h1>${order[x]}</h1>
-          <p>${doc.data()[order[x]]['about']}</p>
-        </div>
-      </div>
-      `;
-    }
-  })
-  .catch((error) => {
-    alert.textContent = `Error when getting data: ${error}`;
-    alert.classList.add("red");alert.classList.add("active");return;
+        Loading(count, '.tile');
+      })
+    })
   })
 
-  .then(() => {
-    Loading(count, ".tile");
-  });
+
+
+
+  // .then(() => {
+  //   console.log(count);
+  //   Loading(count, ".tile");
+  // });
 };
 
 pages['/accounts'] = function(page) {
@@ -447,7 +424,7 @@ function UpdatePage(page, subpage) {
 };
 
 window.addEventListener('load', () => {
-  if(window.location.host.split(".")[1] != "skywarsnetwork") {window.location.replace("https://www.skywarsnetwork.com")};
+  // if(window.location.host.split(".")[1] != "skywarsnetwork") {window.location.replace("https://www.skywarsnetwork.com")};
   if(window.location.pathname.split("/").length > 2) {
     let a = '';
     for(let x in window.location.pathname.split("/")){
