@@ -19,6 +19,16 @@
           "destination": "/index.html"
         }
       ]
+    },
+    {
+      "target": "cdn",
+      "public": "dist/cdn",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }

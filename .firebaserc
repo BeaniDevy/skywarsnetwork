@@ -10,6 +10,9 @@
         ],
         "forums": [
           "skywars-forum"
+        ],
+        "cdn": [
+          "skywars-source"
         ]
       }
     }
